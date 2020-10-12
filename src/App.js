@@ -1,12 +1,27 @@
-import React from 'react';
-import { Deck, Slide, Heading } from 'spectacle';
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom'
+import Navigation from './components/Navigation'
+import FirstSlide from './weekOne/FirstSlide'
+import SecondSlide from './weekTwo/SecondSlide'
+
 function App() {
   return (
-    <Deck>
-      <Slide>
-        <Heading>Welcome to Spectacle</Heading>
-      </Slide>
-    </Deck>
-  );
+    <Router>
+      <Navigation />
+
+      <Switch>
+        <Route path="/weekOne/FirstSlide">
+            <FirstSlide />
+        </Route>
+        <Route path="/weekTwo/SecondSlide">
+            <SecondSlide />
+        </Route>
+      </Switch>
+    </Router>
+  )
 }
 export default App;
